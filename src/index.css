@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+/* Required base styles for GSAP ScrollSmoother */
+html, body, #root {
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.content {
+  min-height: 100%;
+  overflow: visible;
+}
+
+@font-face {
+  font-family: "Blacksword";
+  src: local("Blacksword"),
+    url("./assets/fonts/Blacksword.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: local("Pacifico"),
+    url("./assets/fonts/Pacifico-Regular.ttf") format("truetype");
+}
+
