@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import biquini from '../../assets/biquini.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,11 +32,22 @@ export default function Product() {
         trigger: wrap,
         start: 'top center',
         endTrigger: section,
-        end: 'top top'
+        end: 'bottom bottom',
       }
     });
 
-    tl.to(el, { rotateZ: 360, y: drop, ease: 'none' });
+    const blades = el.querySelector && el.querySelector('#blades');
+    if (blades) {
+
+      gsap.set(blades, { transformOrigin: '50% 50%', transformBox: 'fillBox' });
+      tl.to(blades, { rotation: 360, svgOrigin: '60 60', ease: 'none' }, 0);
+    } else {
+      // fallback: rotaciona o wrapper caso não encontre o grupo de lâminas
+      tl.to(el, { rotateZ: 360, ease: 'none' }, 0);
+    }
+
+    // aplica o movimento de descida ao wrapper
+    tl.to(el, { y: drop, ease: 'none' }, 0);
 
     return () => {
       tl.kill();
@@ -50,9 +62,7 @@ export default function Product() {
         <Left>
           <WindWrapper>
             <Wind ref={windRef} aria-hidden>
-              <Blade style={{ transformOrigin: '50% 50%', transform: 'rotate(0deg) translateY(-36px)' }} />
-              <Blade style={{ transformOrigin: '50% 50%', transform: 'rotate(120deg) translateY(-36px)' }} />
-              <Blade style={{ transformOrigin: '50% 50%', transform: 'rotate(240deg) translateY(-36px)' }} />
+              <MillSVG />
             </Wind>
           </WindWrapper>
         </Left>
@@ -97,7 +107,7 @@ export default function Product() {
           </DiffList>
         </MiddleColumn>
         <Right>
-          <FakeImage>Imagem</FakeImage>
+          <FakeImage src={biquini} alt="" />
         </Right>
       </Container>
     </Section>
@@ -114,13 +124,63 @@ function IconSVG() {
 }
 
 
+function MillSVG() {
+  return (
+    <svg width="260" height="260" viewBox="-120 -120 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+      <defs>
+        <linearGradient id="g-accent" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="var(--accent)" />
+          <stop offset="1" stopColor="var(--accent-2)" />
+        </linearGradient>
+        <linearGradient id="g-fold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="var(--accent-2)" />
+          <stop offset="1" stopColor="var(--accent)" />
+        </linearGradient>
+      </defs>
+
+      <style>{`
+        svg { --accent: #ff6600; --accent-2: #ffcc00; }
+        .blade { fill: url(#g-accent); stroke: var(--accent); stroke-width: 2; }
+        .fold  { fill: url(#g-fold);  stroke: var(--accent); stroke-width: 1.6; }
+        .crease{ stroke: #7a3f00; stroke-width: 1.2; stroke-dasharray: 4 3; fill: none; opacity: .85; }
+      `}</style>
+
+      {/* PÁ CURVADA base */}
+      <g>
+        <path className="blade" d="M 0 0 C 28 -10, 56 -22, 92 -24 C 78 -6, 58 12, 34 28 C 22 34, 10 20, 0 0 Z" />
+        <path className="fold" d="M 0 0 L 54 -20 L 22 16 Z" />
+        <path className="crease" d="M 4 6 L 46 -14" />
+      </g>
+
+      {/* Demais pás */}
+      <g transform="rotate(90)">
+        <path className="blade" d="M 0 0 C 28 -10, 56 -22, 92 -24 C 78 -6, 58 12, 34 28 C 22 34, 10 20, 0 0 Z" />
+        <path className="fold" d="M 0 0 L 54 -20 L 22 16 Z" />
+        <path className="crease" d="M 4 6 L 46 -14" />
+      </g>
+
+      <g transform="rotate(180)">
+        <path className="blade" d="M 0 0 C 28 -10, 56 -22, 92 -24 C 78 -6, 58 12, 34 28 C 22 34, 10 20, 0 0 Z" />
+        <path className="fold" d="M 0 0 L 54 -20 L 22 16 Z" />
+        <path className="crease" d="M 4 6 L 46 -14" />
+      </g>
+
+      <g transform="rotate(270)">
+        <path className="blade" d="M 0 0 C 28 -10, 56 -22, 92 -24 C 78 -6, 58 12, 34 28 C 22 34, 10 20, 0 0 Z" />
+        <path className="fold" d="M 0 0 L 54 -20 L 22 16 Z" />
+        <path className="crease" d="M 4 6 L 46 -14" />
+      </g>
+    </svg>
+  );
+}
+
+
 
 const Section = styled.section`
     --primary: #111111;
     --accent: #ff6600; /* laranja vibrante */
     --accent-2: #ffcc00; /* laranja claro */
     --muted: #6b6b6b;
-    background: linear-gradient(180deg, #fff9f6 0%, #ffffff 100%);
     width: 100%;
     box-sizing: border-box;
     padding: 7vh 4vw;
@@ -162,23 +222,13 @@ const Wind = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(255,255,255,0.1)), linear-gradient(180deg,#fff 0%, #fff6f2 100%);
-    box-shadow: 0 10px 28px rgba(17,17,17,0.06);
-    border: 1px solid rgba(255,102,0,0.06);
 
     @media (max-width: 900px){
         display: none;
     }
 `;
 
-const Blade = styled.div`
-    position: absolute;
-    width: 10%;
-    height: 40%;
-    background: linear-gradient(180deg,var(--accent),var(--accent-2));
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(255,102,0,0.12);
-`;
+/* Blade styled-component removed in favor of inline SVG MillSVG */
 
 const MiddleColumn = styled.div`
     box-sizing: border-box;
@@ -187,7 +237,6 @@ const MiddleColumn = styled.div`
     @media (max-width: 900px){ padding: 0 4vw; }
 `;
 
-// ...existing code...
 const DiffList = styled.div`
   display: flex;
   flex-direction: column;
@@ -268,16 +317,12 @@ const Right = styled.div`
     align-items: center;
 `;
 
-const FakeImage = styled.div`
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: linear-gradient(180deg,#fff4f5,#fff);
+const FakeImage = styled.img`
+    width: 50%;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--muted);
-    font-weight: 600;
 `;
 
       

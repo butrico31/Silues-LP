@@ -8,6 +8,7 @@
 
 html, body {
   scroll-behavior: smooth;
+  background-color: antiquewhite;
 }
 
 /* Required base styles for GSAP ScrollSmoother */

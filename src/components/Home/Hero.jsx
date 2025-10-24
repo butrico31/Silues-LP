@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { gsap } from "gsap";
-import background from '../../assets/oi.jpg'
-import logo from '../../assets/Logo-Silues.png'
+import background from '../../assets/oi.webp'
+import logo from '../../assets/Logo-Silues.webp'
 
 export default function Hero() {
     const coverRef = useRef(null);
