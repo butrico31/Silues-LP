@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import biquini from '../../assets/biquini.webp';
+import biquini from '/10-pop-frente.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,7 +107,7 @@ export default function Product() {
           </DiffList>
         </MiddleColumn>
         <Right>
-          <FakeImage src={biquini} alt="" />
+          <Image src={biquini} alt="" />
         </Right>
       </Container>
     </Section>
@@ -317,8 +317,8 @@ const Right = styled.div`
     align-items: center;
 `;
 
-const FakeImage = styled.img`
-    width: 50%;
+const Image = styled.img`
+    width: 100%;
     border-radius: 12px;
     display: flex;
     align-items: center;
