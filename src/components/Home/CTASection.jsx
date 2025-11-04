@@ -10,11 +10,7 @@ export default function CTASection() {
           <Subtitle>Fale com nossas especialistas no WhatsApp e descubra o biquíni ideal para você.</Subtitle>
         </TextWrapper>
         <Actions>
-          <Thumbs>
-            <Small src="/img/thumb1.jpg" alt="produto 1" />
-            <Small src="/img/thumb2.jpg" alt="produto 2" />
-            <Small src="/img/thumb3.jpg" alt="produto 3" />
-          </Thumbs>
+          
           <Button href="https://wa.me/5511987654321" target="_blank" rel="noreferrer">Falar com as Especialistas no WhatsApp</Button>
         </Actions>
       </Inner>
@@ -23,7 +19,7 @@ export default function CTASection() {
 }
 
 const Section = styled.section`
-  background: linear-gradient(90deg, #ffd9e6, #fff1f6);
+  background: #ffe6d6;
   padding: 72px 16px;
   min-height: 360px;
 `;
@@ -34,6 +30,7 @@ const Inner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
   gap: 18px;
 `;
 
@@ -57,6 +54,7 @@ const Button = styled.a`
   color: #fff;
   padding: 12px 18px;
   border-radius: 10px;
+  margin-top: 48px;
   font-weight: 700;
   text-decoration: none;
 `;

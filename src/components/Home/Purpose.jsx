@@ -32,7 +32,7 @@ export default function Purpose() {
 
 const Section = styled.section`
   padding: 96px 16px;
-  background: #fff;
+  background: #ffe6d6;
   min-height: 520px;
   @media (max-width: 800px) {
     padding: 48px 12px;

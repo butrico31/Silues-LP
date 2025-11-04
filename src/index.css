@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
-  background: #fff;
 }
 
 /* Required base styles for GSAP ScrollSmoother */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
@@ -24,6 +26,27 @@ html, body, #root {
 .content {
   min-height: 100%;
   overflow: visible;
+  position: relative;
+  /* background moved to pseudo-element so we can adjust opacity */
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/981837_OGZR8F0.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7; /* adjust this value to make the background more or less visible */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ensure content children render above the background pseudo-element */
+.content > * {
+  position: relative;
+  z-index: 1;
 }
 
 @font-face {
@@ -37,4 +60,3 @@ html, body, #root {
   src: local("Pacifico"),
     url("./assets/fonts/Pacifico-Regular.ttf") format("truetype");
 }
-
