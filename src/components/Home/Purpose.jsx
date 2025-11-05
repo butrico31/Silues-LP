@@ -32,8 +32,9 @@ export default function Purpose() {
 
 const Section = styled.section`
   padding: 96px 16px;
-  background: #ffe6d6;
   min-height: 520px;
+  position: relative;
+  
   @media (max-width: 800px) {
     padding: 48px 12px;
     min-height: auto;
@@ -58,8 +59,11 @@ const Left = styled.div``;
 
 const Photo = styled.img`
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
   object-fit: cover;
+  box-shadow: 0 8px 24px rgba(255, 102, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+  position: relative;
+  z-index: 1;
 `;
 
 const Gallery = styled.div`
@@ -75,7 +79,17 @@ const Gallery = styled.div`
 const Thumb = styled.img`
   width: 160px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+  position: relative;
+  z-index: 1;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 102, 0, 0.16);
+  }
+  
   @media (max-width: 800px) {
     width: 100%;
     height: 160px;

@@ -30,6 +30,7 @@ export default function SocialProof() {
 
 const Section = styled.section`
   padding: 72px 16px;
+  position: relative;
 `;
 
 const Inner = styled.div`
@@ -41,11 +42,15 @@ const Title = styled.h2`
   font-size: 1.6rem;
   margin: 0 0 8px 0;
   color: #111;
+  position: relative;
+  z-index: 1;
 `;
 
 const Description = styled.p`
   margin: 0 0 18px 0;
   color: #444;
+  position: relative;
+  z-index: 1;
 `;
 
 const CarouselWrap = styled.div`

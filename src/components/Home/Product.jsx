@@ -251,49 +251,14 @@ const DiffItem = styled.div`
   gap: 2rem;
   align-items: flex-start;
   background: #fff;
-  padding: 14px;
-  border-radius: 12px;
-  overflow: visible;
-  z-index: 0;
-  transition: transform 220ms ease, color 220ms ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: -12px;
-    right: -12px;
-    top: -12px;
-    bottom: -12px;
-    z-index: -2;
-    border-radius: inherit;
-    background: linear-gradient(90deg, var(--accent), var(--accent-2));
-    -webkit-filter: blur(18px);
-    filter: blur(18px);
-    opacity: 0;
-    transition: opacity 260ms ease, transform 260ms ease;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    z-index: -1;
-    border-radius: calc(8px);
-    background: #fff;
-    pointer-events: none;
-  }
-
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(255, 102, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+  
   &:hover {
-    transform: translateY(-4px);
-  }
-
-  &:hover::before {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(255, 102, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.08);
   }
 `;
 

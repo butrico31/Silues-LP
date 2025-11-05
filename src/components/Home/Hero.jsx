@@ -18,9 +18,10 @@ export default function Hero() {
         const el = coverRef.current;
         if (!el) return;
 
+        // Anima a cortina com onda subindo
         gsap.to(el, {
             yPercent: -100,
-            duration: 1.0,
+            duration: 1.2,
             ease: 'power2.inOut',
             delay: 0.35,
             onComplete: () => {
@@ -31,7 +32,29 @@ export default function Hero() {
 
     return (
         <Container>
-            <EntryCover ref={coverRef} />
+            <EntryCover ref={coverRef}>
+                {/* Onda 1 - Mais profunda */}
+                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '80px', opacity: 0.4, animationDelay: '0s' }}>
+                    <path d="M0,40 C200,80 400,20 600,60 C800,100 1000,40 1200,70 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.15)" />
+                </WaveSVG>
+                
+                {/* Onda 2 - Média */}
+                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '40px', opacity: 0.5, animationDelay: '-1s' }}>
+                    <path d="M0,20 C150,70 350,10 600,50 C850,90 1050,30 1200,60 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.2)" />
+                </WaveSVG>
+                
+                {/* Onda 3 - Superfície */}
+                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '-2px', opacity: 0.7, animationDelay: '-2s' }}>
+                    <path d="M0,0 C150,80 350,0 600,50 C850,100 1050,20 1200,80 L1200,120 L0,120 Z" fill="url(#waveGradient)" />
+                    <defs>
+                        <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="rgba(255,255,255,0.3)" />
+                            <stop offset="50%" stopColor="rgba(255,255,255,0.4)" />
+                            <stop offset="100%" stopColor="rgba(255,255,255,0.35)" />
+                        </linearGradient>
+                    </defs>
+                </WaveSVG>
+            </EntryCover>
 
             <Filter>
                 <FirstLineContainer id="home">
@@ -76,8 +99,28 @@ const Container = styled.div`
 const EntryCover = styled.div`
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, #111 0%, #000 100%);
+    background: linear-gradient(180deg, #0d4f8b 0%, #1976d2 40%, #2196f3 70%, #4fc3f7 100%);
     z-index: 50;
+    overflow: hidden;
+`;
+
+const WaveSVG = styled.svg`
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    opacity: 0.7;
+    animation: waveMove 3s ease-in-out infinite;
+
+    @keyframes waveMove {
+        0%, 100% {
+            transform: translateX(0) scaleX(1);
+        }
+        50% {
+            transform: translateX(-50px) scaleX(1.1);
+        }
+    }
 `;
 const Filter = styled.div`
     position: absolute;
@@ -85,7 +128,7 @@ const Filter = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, rgba(255, 102, 0, 0.15) 0%, rgba(0, 0, 0, 0.45) 100%);
     z-index: 0;
     display: flex;
     flex-direction: column;

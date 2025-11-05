@@ -6,11 +6,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Pagination } from 'swiper/modules';
 import { Navigation } from 'swiper/modules';
+import { EffectCoverflow } from 'swiper/modules';
 // Navigation styles
 import 'swiper/css/navigation';
 // Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-coverflow';
 
 export default function SimpleCarousel({ items = [], interval = 4500 }) {
   if (!items || items.length === 0) return null;
@@ -18,13 +20,21 @@ export default function SimpleCarousel({ items = [], interval = 4500 }) {
   return (
     <Wrap>
       <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
-        spaceBetween={24}
-        slidesPerView={1}
+        modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView="auto"
         loop={true}
         navigation={true}
         pagination={{ clickable: true }}
-
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 200,
+          modifier: 1,
+          slideShadows: false,
+        }}
         autoplay={{ delay: interval, disableOnInteraction: false }}
         breakpoints={{
           // when window width is >= 640px
@@ -59,6 +69,28 @@ const Wrap = styled.div`
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+  padding: 40px 0;
+
+  .swiper-slide {
+    width: 320px;
+    transition: transform 0.4s ease;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.1);
+    z-index: 2;
+  }
+
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    transform: scale(0.85);
+    opacity: 0.7;
+  }
+
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
 `;
 
 const Slide = styled.div`
@@ -72,6 +104,7 @@ const Slide = styled.div`
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   min-height: 200px;
+  transition: all 0.4s ease;
 `;
 
 const Img = styled.img`

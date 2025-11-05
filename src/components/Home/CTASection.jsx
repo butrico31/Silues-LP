@@ -19,9 +19,9 @@ export default function CTASection() {
 }
 
 const Section = styled.section`
-  background: #ffe6d6;
   padding: 72px 16px;
   min-height: 360px;
+  position: relative;
 `;
 
 const Inner = styled.div`
@@ -50,13 +50,27 @@ const Actions = styled.div``;
 
 const Button = styled.a`
   display: inline-block;
-  background: linear-gradient(90deg,#ff66a0,#ffd700);
+  background: linear-gradient(135deg, #ff6600 0%, #ff8833 50%, #ffcc00 100%);
   color: #fff;
-  padding: 12px 18px;
-  border-radius: 10px;
+  padding: 16px 32px;
+  border-radius: 12px;
   margin-top: 48px;
   font-weight: 700;
+  font-size: 1.05rem;
   text-decoration: none;
+  box-shadow: 0 6px 20px rgba(255, 102, 0, 0.3), 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 240ms ease, box-shadow 240ms ease;
+  position: relative;
+  z-index: 1;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 102, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
 `;
 
 const Thumbs = styled.div`

@@ -34,9 +34,20 @@ export default function SiteFooter() {
 }
 
 const Footer = styled.footer`
-  background: #111;
+  background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
   color: #fff;
-  padding: 28px 16px;
+  padding: 48px 16px 28px 16px;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6600 0%, #ffcc00 50%, #ff6600 100%);
+  }
 `;
 
 const Inner = styled.div`
@@ -56,7 +67,9 @@ const Social = styled.div`
   gap:8px;
 `;
 const Legal = styled.div`
-  color:#ddd;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.6;
 `;
 const Nav = styled.nav`
   display: flex;
@@ -64,9 +77,14 @@ const Nav = styled.nav`
   gap: 4px;
 `;
 const NavLink = styled.a`
-  color: #fff;
+  color: #ddd;
   text-decoration: none;
-  &:hover { color: #ffcc00; }
+  padding: 6px 0;
+  transition: color 200ms ease;
+  
+  &:hover { 
+    color: #ffcc00;
+  }
 `;
 const Imr = styled.div`
   a{ color:#ffd700 }
