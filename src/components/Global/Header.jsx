@@ -112,10 +112,18 @@ const HeaderInner = styled.div`
 `;
 
 const Brand = styled(NavLink)`
-    color: #ffcc00; /* acento amarelo para o brand */
+    color: #ffcc00;
     font-weight: 700;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition: color 200ms ease, transform 200ms ease;
+    
+    &:hover {
+        color: #ff8833;
+        transform: scale(1.05);
+    }
 `;
 
 const Link = styled(NavLink)`
@@ -134,9 +142,16 @@ const Link = styled(NavLink)`
 const AnchorLink = styled.a`
     color: #fff;
     text-decoration: none;
-    padding: 8px 10px;
+    padding: 8px 12px;
     border-radius: 8px;
-    &:hover{ background: rgba(255,255,255,0.06); color: #ffcc00; }
+    font-weight: 500;
+    transition: all 200ms ease;
+    
+    &:hover{ 
+        background: rgba(255,204,0,0.15);
+        color: #ffcc00; 
+        transform: translateY(-1px);
+    }
 `;
 
 /* Mobile menu styles */

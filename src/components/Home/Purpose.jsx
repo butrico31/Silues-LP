@@ -98,8 +98,21 @@ const Thumb = styled.img`
 
 const Bullets = styled.ul`
   margin-top: 14px;
-  color: #444;
-  li { margin-bottom: 6px; }
+  color: #555;
+  li { 
+    margin-bottom: 8px; 
+    font-size: 1.05rem;
+    line-height: 1.6;
+    
+    &::marker {
+      color: #ff6600;
+      font-size: 1.2rem;
+    }
+    
+    @media (max-width: 800px){
+      font-size: 0.95rem;
+    }
+  }
 `;
 
 const Right = styled.div``;
@@ -108,14 +121,37 @@ const Kicker = styled.div`
   color: #ff6600;
   font-weight: 700;
   margin-bottom: 8px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  
+  @media (max-width: 800px){
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
 `;
 
 const Title = styled.h3`
   margin: 0 0 12px 0;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
+  font-family: 'Blacksword', serif;
+  background: linear-gradient(135deg, #ff6600, #ff8833, #ffcc00);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  @media (max-width: 800px){
+    font-size: 1.4rem;
+  }
 `;
 
 const Text = styled.p`
-  color: #444;
-  line-height: 1.6;
+  color: #555;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  
+  @media (max-width: 800px){
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
 `;

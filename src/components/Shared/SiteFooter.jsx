@@ -48,6 +48,10 @@ const Footer = styled.footer`
     height: 3px;
     background: linear-gradient(90deg, #ff6600 0%, #ffcc00 50%, #ff6600 100%);
   }
+  
+  @media (max-width: 768px){
+    padding: 32px 16px 24px 16px;
+  }
 `;
 
 const Inner = styled.div`
@@ -58,6 +62,12 @@ const Inner = styled.div`
   gap: 24px;
   justify-content: space-between;
   align-items: flex-start;
+  
+  @media (max-width: 768px){
+    flex-direction: column;
+    height: auto;
+    gap: 32px;
+  }
 `;
 
 const Col = styled.div``;
@@ -67,9 +77,9 @@ const Social = styled.div`
   gap:8px;
 `;
 const Legal = styled.div`
-  color: #ccc;
+  color: #ddd;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
 `;
 const Nav = styled.nav`
   display: flex;
@@ -80,12 +90,30 @@ const NavLink = styled.a`
   color: #ddd;
   text-decoration: none;
   padding: 6px 0;
-  transition: color 200ms ease;
+  font-size: 1rem;
+  transition: all 200ms ease;
+  display: inline-block;
   
   &:hover { 
-    color: #ffcc00;
+    color: #ff8833;
+    transform: translateX(4px);
   }
 `;
 const Imr = styled.div`
-  a{ color:#ffd700 }
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  font-size: 0.9rem;
+  
+  a { 
+    color: #ffd700;
+    transition: transform 200ms ease;
+    display: inline-flex;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 `;

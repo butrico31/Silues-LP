@@ -185,16 +185,24 @@ const TitleContainer = styled.div`
 
 const Title = styled.h1`
     color: white;
-    font-size: 2rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
+    font-size: 2.2rem;
+    font-family: 'Pacifico', cursive;
+    font-weight: normal;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    
+    @media (max-width: 768px){
+        font-size: 1.6rem;
+    }
 `
 
 const Gradient = styled.span`
-    background: linear-gradient(90deg, #ff6600, #ffcc00);
+    background: linear-gradient(90deg, #ff6600, #ffcc00, #ff8800);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
+    font-weight: bold;
+    text-shadow: none;
+    filter: drop-shadow(2px 2px 4px rgba(255, 102, 0, 0.4));
 `
 
 const LineBottomVertical = styled.div`

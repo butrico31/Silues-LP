@@ -232,9 +232,29 @@ const Wind = styled.div`
 
 const MiddleColumn = styled.div`
     box-sizing: border-box;
-    h3{ font-size: 1.2rem; margin-bottom: 6px; color: var(--primary); }
+    h3{ 
+        font-size: 1.5rem; 
+        margin-bottom: 6px; 
+        color: var(--primary);
+        font-family: 'Blacksword', serif;
+        background: linear-gradient(135deg, #ff6600, #ff8833, #ffcc00);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
     p{ font-size: 1rem; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
-    @media (max-width: 900px){ padding: 0 4vw; }
+    
+    @media (max-width: 900px){ 
+        padding: 0;
+        
+        h3 {
+            font-size: 1.3rem;
+        }
+        
+        p {
+            font-size: 0.95rem;
+        }
+    }
 `;
 
 const DiffList = styled.div`
@@ -248,7 +268,7 @@ const DiffList = styled.div`
 const DiffItem = styled.div`
   position: relative;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   align-items: flex-start;
   background: #fff;
   padding: 18px;
@@ -256,13 +276,24 @@ const DiffItem = styled.div`
   box-shadow: 0 4px 16px rgba(255, 102, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: transform 260ms ease, box-shadow 260ms ease;
   
+  strong {
+    color: #ff6600;
+    font-size: 1.05rem;
+  }
+  
   &:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(255, 102, 0, 0.14), 0 4px 12px rgba(0, 0, 0, 0.08);
   }
+  
+  @media (max-width: 900px){
+    gap: 0.75rem;
+    padding: 14px;
+  }
 `;
 
 const IconCircle = styled.div`
+    min-width: 52px;
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -271,8 +302,13 @@ const IconCircle = styled.div`
     justify-content: center;
     background: linear-gradient(135deg,var(--accent),var(--accent-2));
     color: #fff;
-
-
+    flex-shrink: 0;
+    
+    @media (max-width: 900px){
+        min-width: 42px;
+        width: 42px;
+        height: 42px;
+    }
 `;
 
 const Right = styled.div`
@@ -280,6 +316,11 @@ const Right = styled.div`
     flex-direction: column;
     gap: 16px;
     align-items: center;
+    
+    @media (max-width: 900px){
+        max-width: 280px;
+        margin: 0 auto;
+    }
 `;
 
 const Image = styled.img`
@@ -288,6 +329,7 @@ const Image = styled.img`
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: contain;
 `;
 
       

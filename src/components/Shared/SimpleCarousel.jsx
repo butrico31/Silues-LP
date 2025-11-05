@@ -121,12 +121,15 @@ const Copy = styled.div`
 `;
 
 const Quote = styled.div`
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #222;
   margin-bottom: 8px;
+  font-style: italic;
+  line-height: 1.5;
 `;
 
 const Author = styled.div`
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: #ff6600;
+  font-weight: 600;
 `;
