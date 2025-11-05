@@ -216,7 +216,7 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
     color: white;
     font-size: 2.2rem;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Dancing Script', cursive;
     font-weight: normal;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
     align-self: flex-end;

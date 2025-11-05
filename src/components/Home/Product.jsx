@@ -236,8 +236,8 @@ const MiddleColumn = styled.div`
         font-size: 1.5rem; 
         margin-bottom: 6px; 
         color: var(--primary);
-        font-family: 'Blacksword', serif;
-        background: linear-gradient(135deg, #ff6600, #ff8833, #ffcc00);
+        font-family: 'Dancing Script', cursive;
+        background: linear-gradient(135deg, #d42c30, #eb8e23);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
@@ -247,7 +247,7 @@ const MiddleColumn = styled.div`
         color: var(--muted); 
         line-height: 1.6; 
         margin-bottom: 14px;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Montserrat', sans-serif;
     }
     
     @media (max-width: 900px){ 
@@ -281,7 +281,7 @@ const DiffItem = styled.div`
   border-radius: 14px;
   box-shadow: 0 4px 16px rgba(255, 102, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: transform 260ms ease, box-shadow 260ms ease;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   
   strong {
     color: #ff6600;

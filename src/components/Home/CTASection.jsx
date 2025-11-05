@@ -44,8 +44,8 @@ const TextWrapper = styled.div``;
 const Title = styled.h3`
   margin: 0 0 6px 0;
   font-size: 1.6rem;
-  font-family: 'Blacksword', serif;
-  background: linear-gradient(135deg, #ff6600, #ff8833, #ffcc00);
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #d42c30, #eb8e23);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -60,7 +60,7 @@ const Subtitle = styled.p`
   color: #555;
   font-size: 1.1rem;
   line-height: 1.6;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   
   @media (max-width: 768px){
     font-size: 0.95rem;

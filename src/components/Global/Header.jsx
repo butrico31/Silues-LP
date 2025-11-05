@@ -116,7 +116,7 @@ const Brand = styled(NavLink)`
     font-weight: 700;
     text-decoration: none;
     font-size: 1.4rem;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Dancing Script', cursive;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     transition: color 200ms ease, transform 200ms ease;
     
@@ -146,7 +146,7 @@ const AnchorLink = styled.a`
     border-radius: 8px;
     font-weight: 500;
     transition: all 200ms ease;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     
     &:hover{ 
         background: rgba(255,204,0,0.15);
@@ -217,7 +217,7 @@ const MobileAnchor = styled.a`
     padding: 12px 8px;
     text-decoration: none;
     border-radius: 8px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     
     &:hover{ background: rgba(255,255,255,0.04); color: #ffcc00; }

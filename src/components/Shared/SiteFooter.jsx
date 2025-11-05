@@ -7,10 +7,10 @@ export default function SiteFooter() {
       <Inner>
         <Col>
           <Social>
-            <a style={{ width: '32px' }} href="https://instagram.com/siluesbiquinis" target="_blank" rel="noreferrer"><img src="/instagram.png" alt="Instagram" /></a>
-            <a style={{ width: '32px' }} href="https://facebook.com/siluesbiquinis" target="_blank" rel="noreferrer"><img src="/facebook.png" alt="Facebook" /></a>
+            <a style={{ width: '32px' }} href="https://instagram.com/siluesbiquinis" target="_blank" rel="noreferrer"><Img src="/instagram.svg" alt="Instagram" /></a>
+            <a style={{ width: '32px' }} href="https://facebook.com/siluesbiquinis" target="_blank" rel="noreferrer"><Img src="/facebook.svg" alt="Facebook" /></a>
           </Social>
-          <Imr> Criado por <a href="https://imersa.com.br"><img style={{width:'124px'}} src="/logo-imersa.png" alt="" /></a></Imr>
+          <Imr> Criado por <a href="https://imersa.com.br"><img style={{ width: '124px' }} src="/logo-imersa.png" alt="" /></a></Imr>
         </Col>
 
         <Col>
@@ -32,6 +32,10 @@ export default function SiteFooter() {
     </Footer>
   )
 }
+
+
+const Img = styled.img`
+`;
 
 const Footer = styled.footer`
   background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
@@ -75,12 +79,29 @@ const Brand = styled.h4``;
 const Social = styled.div`
   display:flex; 
   gap:8px;
+  
+  a {
+    display: inline-block;
+    transition: transform 200ms ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 `;
 const Legal = styled.div`
   color: #ddd;
   font-size: 0.95rem;
   line-height: 1.7;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  
+  &:first-child {
+    background: linear-gradient(135deg, #d42c30, #eb8e23);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 600;
+  }
 `;
 const Nav = styled.nav`
   display: flex;
@@ -94,11 +115,14 @@ const NavLink = styled.a`
   font-size: 1rem;
   transition: all 200ms ease;
   display: inline-block;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   
   &:hover { 
-    color: #ff8833;
+    background: linear-gradient(135deg, #d42c30, #eb8e23);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     transform: translateX(4px);
   }
 `;
@@ -107,9 +131,13 @@ const Imr = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #aaa;
   font-size: 0.9rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #d42c30, #eb8e23);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 500;
   
   a { 
     color: #ffd700;

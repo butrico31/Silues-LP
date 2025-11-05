@@ -48,8 +48,8 @@ const Title = styled.h2`
   color: #111;
   position: relative;
   z-index: 1;
-  font-family: 'Blacksword', serif;
-  background: linear-gradient(135deg, #ff6600, #ff8833, #ffcc00);
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(135deg, #d42c30, #eb8e23);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -65,7 +65,7 @@ const Description = styled.p`
   position: relative;
   z-index: 1;
   font-size: 1.05rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   
   @media (max-width: 768px){
     font-size: 0.95rem;
