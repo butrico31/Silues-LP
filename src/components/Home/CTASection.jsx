@@ -60,6 +60,7 @@ const Subtitle = styled.p`
   color: #555;
   font-size: 1.1rem;
   line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
   
   @media (max-width: 768px){
     font-size: 0.95rem;

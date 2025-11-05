@@ -242,7 +242,13 @@ const MiddleColumn = styled.div`
         -webkit-background-clip: text;
         background-clip: text;
     }
-    p{ font-size: 1rem; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
+    p{ 
+        font-size: 1rem; 
+        color: var(--muted); 
+        line-height: 1.6; 
+        margin-bottom: 14px;
+        font-family: 'Poppins', sans-serif;
+    }
     
     @media (max-width: 900px){ 
         padding: 0;
@@ -275,10 +281,17 @@ const DiffItem = styled.div`
   border-radius: 14px;
   box-shadow: 0 4px 16px rgba(255, 102, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: transform 260ms ease, box-shadow 260ms ease;
+  font-family: 'Poppins', sans-serif;
   
   strong {
     color: #ff6600;
     font-size: 1.05rem;
+    font-weight: 600;
+  }
+  
+  div {
+    font-size: 0.95rem;
+    color: #666;
   }
   
   &:hover {

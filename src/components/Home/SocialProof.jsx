@@ -65,6 +65,7 @@ const Description = styled.p`
   position: relative;
   z-index: 1;
   font-size: 1.05rem;
+  font-family: 'Poppins', sans-serif;
   
   @media (max-width: 768px){
     font-size: 0.95rem;

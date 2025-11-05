@@ -99,6 +99,8 @@ const Thumb = styled.img`
 const Bullets = styled.ul`
   margin-top: 14px;
   color: #555;
+  font-family: 'Poppins', sans-serif;
+  
   li { 
     margin-bottom: 8px; 
     font-size: 1.05rem;
@@ -149,6 +151,7 @@ const Text = styled.p`
   color: #555;
   line-height: 1.7;
   font-size: 1.05rem;
+  font-family: 'Poppins', sans-serif;
   
   @media (max-width: 800px){
     font-size: 0.95rem;

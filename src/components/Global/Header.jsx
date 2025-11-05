@@ -32,7 +32,7 @@ export default function Header() {
     const headerNode = (
         <Nav scrolled={scrolledPastHero}>
             <HeaderInner>
-                <Brand to="/">Silues</Brand>
+                <Brand to="/"><img style={{width:'86px'}} src="/Logo-Silues.webp" alt="" /></Brand>
 
                 <Links_containers>
                     <AnchorLink href="#home" onClick={(e) => scrollToId(e, 'home')}>Home</AnchorLink>
@@ -146,6 +146,7 @@ const AnchorLink = styled.a`
     border-radius: 8px;
     font-weight: 500;
     transition: all 200ms ease;
+    font-family: 'Poppins', sans-serif;
     
     &:hover{ 
         background: rgba(255,204,0,0.15);
@@ -216,5 +217,8 @@ const MobileAnchor = styled.a`
     padding: 12px 8px;
     text-decoration: none;
     border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    
     &:hover{ background: rgba(255,255,255,0.04); color: #ffcc00; }
 `;

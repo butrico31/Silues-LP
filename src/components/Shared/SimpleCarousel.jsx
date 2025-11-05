@@ -126,10 +126,13 @@ const Quote = styled.div`
   margin-bottom: 8px;
   font-style: italic;
   line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 `;
 
 const Author = styled.div`
   font-size: 0.95rem;
   color: #ff6600;
   font-weight: 600;
+  font-family: 'Poppins', sans-serif;
 `;

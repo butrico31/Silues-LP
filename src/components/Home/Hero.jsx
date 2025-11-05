@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { gsap } from "gsap";
-import background from '../../assets/oi.webp'
-import logo from '../../assets/Logo-Silues.webp'
+import background from '/oi.webp'
+import logo from '/Logo-Silues.webp'
 
 export default function Hero() {
     const coverRef = useRef(null);
@@ -59,10 +59,11 @@ export default function Hero() {
             <Filter>
                 <FirstLineContainer id="home">
                     <LogoContainer>
-                        <Logo src={logo} alt="Logo da Silues" />
+                        
                     </LogoContainer>
                     <LineTopVertical></LineTopVertical>
                     <TitleContainer>
+                        <Logo src={logo} alt="Logo da Silues" />
                         <Title>Descubra o poder da <Gradient>exclusividade e conforto</Gradient> nos seus biquínis.</Title>
                     </TitleContainer>
                 </FirstLineContainer>
@@ -82,7 +83,33 @@ export default function Hero() {
     )
 }
 
-const topHeight = '70vh';
+// ========== VARIÁVEIS DE LAYOUT ==========
+// Alturas das seções
+const topHeight = '90vh';
+const bottomHeight = '34vh';
+
+// Larguras dos containers
+const logoContainerWidth = '25%';
+const titleContainerWidth = '65%';
+const voidDivWidth = '25%';
+
+// Dimensões das linhas
+const lineThickness = '1vh';
+const lineHorizontalHeight = '0.9vh';
+
+// Linha vertical superior
+const lineTopVerticalHeight = '88vh';
+// Linha vertical inferior
+const lineBottomVerticalHeight = '7vh';
+
+// Linhas horizontais
+const lineLeftHorizontalWidth = '24vw';
+const lineRightHorizontalWidth = 'calc(74vw - 1vh)';
+
+// Logo
+const logoWidth = '400px';
+const logoWidthMobile = '200px';
+// ==========================================
 
 
 const Container = styled.div`
@@ -137,10 +164,12 @@ const Filter = styled.div`
 `
 
 const Logo = styled.img`
-    width: 400px;
-
+    width: ${logoWidth};
+    display: flex;
+    justify-self: flex-start;
+    align-self: center;
     @media (max-width: 768px){
-        width: 200px;
+        width: ${logoWidthMobile};
     }
 `
 
@@ -148,7 +177,7 @@ const LogoContainer = styled.div`
     display: flex;
     justify-content: right;
     align-items: center;
-    width: 45%;
+    width: ${logoContainerWidth};
     height: ${topHeight};
 
     @media (max-width: 768px){
@@ -160,26 +189,27 @@ const LogoContainer = styled.div`
 `
 
 const LineTopVertical = styled.div`
-    width: 1vh;
-    height: 68vh;
-    background-color: white;
+    width: ${lineThickness};
+    height: ${lineTopVerticalHeight};
     background-color: #ff6600;
+    
     @media (max-width: 768px){
         display: none;
     }
 `
 
 const TitleContainer = styled.div`
-    width: 45%;
+    width: ${titleContainerWidth};
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     text-align: center;
 
     @media (max-width: 768px){
         width: 100%;
         align-items: center;
         padding: 0 12px;
+        flex-direction: column;
     }
 `
 
@@ -189,7 +219,8 @@ const Title = styled.h1`
     font-family: 'Pacifico', cursive;
     font-weight: normal;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    
+    align-self: flex-end;
+    margin-bottom: 7.5%;
     @media (max-width: 768px){
         font-size: 1.6rem;
     }
@@ -206,32 +237,32 @@ const Gradient = styled.span`
 `
 
 const LineBottomVertical = styled.div`
-    width: 1vh;
+    width: ${lineThickness};
     display: flex;
-    height: 27vh;
+    height: ${lineBottomVerticalHeight};
     align-self: end;
-    background-color: white;
     background-color: #ff6600;
+    
     @media (max-width: 768px){
         display: none;
     }
 `
 
 const LineLeftHorizontal = styled.div`
-    width: 44vw;
-    height: 0.9vh;
-    background-color: white;
+    width: ${lineLeftHorizontalWidth};
+    height: ${lineHorizontalHeight};
     background-color: #ff6600;
+    
     @media (max-width: 768px){
         display: none;
     }
 `
 
 const LineRightHorizontal = styled.div`
-    width: calc(54vw - 1vh);
-    height: 85%;
-    background-color: white;
+    width: ${lineRightHorizontalWidth};
+    height: ${lineHorizontalHeight};
     background-color: #ff6600;
+    
     @media (max-width: 768px){
         display: none;
     }
@@ -252,7 +283,7 @@ const FirstLineContainer = styled.div`
 `
 
 const SecondLineContainer = styled.div`
-    height: 34vh;
+    height: ${bottomHeight};
     display: flex;
 
     @media (max-width: 768px){
@@ -270,7 +301,7 @@ const LinesContainer = styled.div`
 `
 
 const VoidDiv = styled.div`
-    width: 45%;
+    width: ${voidDivWidth};
 
     @media (max-width: 768px){
         width: 100%;

@@ -80,6 +80,7 @@ const Legal = styled.div`
   color: #ddd;
   font-size: 0.95rem;
   line-height: 1.7;
+  font-family: 'Poppins', sans-serif;
 `;
 const Nav = styled.nav`
   display: flex;
@@ -93,6 +94,8 @@ const NavLink = styled.a`
   font-size: 1rem;
   transition: all 200ms ease;
   display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   
   &:hover { 
     color: #ff8833;
@@ -106,6 +109,7 @@ const Imr = styled.div`
   gap: 8px;
   color: #aaa;
   font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
   
   a { 
     color: #ffd700;
