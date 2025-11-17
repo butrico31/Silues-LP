@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export default function CTASection() {
   return (
-    <Section>
+    <Section id="contact">
       <Inner>
         <TextWrapper>
           <Title>Quer conhecer nossas peças exclusivas?</Title>
@@ -11,7 +11,7 @@ export default function CTASection() {
         </TextWrapper>
         <Actions>
           
-          <Button href="https://wa.me/5511987654321" target="_blank" rel="noreferrer">Falar com as Especialistas no WhatsApp</Button>
+          <Button href="https://wa.me/5519992095965" target="_blank" rel="noreferrer">Falar com as Especialistas no WhatsApp</Button>
         </Actions>
       </Inner>
     </Section>

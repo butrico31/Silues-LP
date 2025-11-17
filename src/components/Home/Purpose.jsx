@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export default function Purpose() {
   return (
-    <Section>
+    <Section id="about">
       <Inner>
         <Left>
           <Photo src="/2025-05-21.webp" alt="Fundadora" />
@@ -15,9 +15,9 @@ export default function Purpose() {
             Fundada com o sonho de criar biquínis que celebram a beleza única de cada mulher, Silues Biquinis nasceu do compromisso em oferecer peças que unem exclusividade e conforto. Desde o início, dedicamos atenção cuidadosa a cada detalhe, buscando proporcionar uma experiência acolhedora e uma relação próxima com nossas clientes, valorizando sua autoestima e estilo.
           </Text>
           <Gallery>
-            <Thumb src="/pop_frente_preto.webp" alt="atelier 1" />
-            <Thumb src="/07-verde-agua-lado.webp" alt="atelier 2" />
-            <Thumb src="/2.0-POP-TRAZ.webp" alt="atelier 3" />
+            <Thumb src="/pop_frente_preto.webp" alt="Biquíni 1" />
+            <Thumb src="/07-verde-agua-lado.webp" alt="Biquíni 2" />
+            <Thumb src="/2.0-POP-TRAZ.webp" alt="Biquíni 3" />
           </Gallery>
           <Bullets>
             <li>Design pensado para o corpo real</li>

@@ -35,10 +35,11 @@ export default function Header() {
                 <Brand to="/"><img style={{width:'86px'}} src="/Logo-Silues.webp" alt="" /></Brand>
 
                 <Links_containers>
-                    <AnchorLink href="#home" onClick={(e) => scrollToId(e, 'home')}>Home</AnchorLink>
-                    <AnchorLink href="#about" onClick={(e) => scrollToId(e, 'about')}>About</AnchorLink>
-                    <AnchorLink href="#products" onClick={(e) => scrollToId(e, 'products')}>Products</AnchorLink>
-                    <AnchorLink href="#contact" onClick={(e) => scrollToId(e, 'contact')}>Contact</AnchorLink>
+                    <AnchorLink href="#home" onClick={(e) => scrollToId(e, 'home')}>Início</AnchorLink>
+                    <AnchorLink href="#about" onClick={(e) => scrollToId(e, 'about')}>Sobre</AnchorLink>
+                    <AnchorLink href="#products" onClick={(e) => scrollToId(e, 'products')}>Produtos</AnchorLink>
+                    <AnchorLink href="#testimonials" onClick={(e) => scrollToId(e, 'testimonials')}>Depoimentos</AnchorLink>
+                    <AnchorLink href="#contact" onClick={(e) => scrollToId(e, 'contact')}>Contato</AnchorLink>
                 </Links_containers>
 
                 <Burger aria-label="Abrir menu" aria-expanded={open} onClick={() => setOpen(!open)} open={open}>
@@ -48,10 +49,11 @@ export default function Header() {
                 </Burger>
 
                 <MobileMenu open={open} onClick={() => setOpen(false)}>
-                    <MobileAnchor href="#home" onClick={(e) => scrollToId(e, 'home')}>Home</MobileAnchor>
-                    <MobileAnchor href="#about" onClick={(e) => scrollToId(e, 'about')}>About</MobileAnchor>
-                    <MobileAnchor href="#products" onClick={(e) => scrollToId(e, 'products')}>Products</MobileAnchor>
-                    <MobileAnchor href="#contact" onClick={(e) => scrollToId(e, 'contact')}>Contact</MobileAnchor>
+                    <MobileAnchor href="#home" onClick={(e) => scrollToId(e, 'home')}>Início</MobileAnchor>
+                    <MobileAnchor href="#about" onClick={(e) => scrollToId(e, 'about')}>Sobre</MobileAnchor>
+                    <MobileAnchor href="#products" onClick={(e) => scrollToId(e, 'products')}>Produtos</MobileAnchor>
+                    <MobileAnchor href="#testimonials" onClick={(e) => scrollToId(e, 'testimonials')}>Depoimentos</MobileAnchor>
+                    <MobileAnchor href="#contact" onClick={(e) => scrollToId(e, 'contact')}>Contato</MobileAnchor>
                 </MobileMenu>
             </HeaderInner>
         </Nav>

@@ -107,7 +107,7 @@ export default function Product() {
           </DiffList>
         </MiddleColumn>
         <Right>
-          <Image src={biquini} alt="" />
+          <Image src={biquini} alt="Biquíni Silues" />
         </Right>
       </Container>
     </Section>
@@ -228,7 +228,6 @@ const Wind = styled.div`
     }
 `;
 
-/* Blade styled-component removed in favor of inline SVG MillSVG */
 
 const MiddleColumn = styled.div`
     box-sizing: border-box;

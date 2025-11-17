@@ -10,22 +10,23 @@ export default function SiteFooter() {
             <a style={{ width: '32px' }} href="https://instagram.com/siluesbiquinis" target="_blank" rel="noreferrer"><Img src="/instagram.svg" alt="Instagram" /></a>
             <a style={{ width: '32px' }} href="https://facebook.com/siluesbiquinis" target="_blank" rel="noreferrer"><Img src="/facebook.svg" alt="Facebook" /></a>
           </Social>
-          <Imr> Criado por <a href="https://imersa.com.br"><img style={{ width: '124px' }} src="/logo-imersa.png" alt="" /></a></Imr>
+          <Imr> Criado por <a href="https://imersa.com.br"><img style={{ width: '124px' }} src="/logo-imersa.png" alt="Logo Imersa" /></a></Imr>
         </Col>
 
         <Col>
-          <Legal>Rua das Flores, 123, São Paulo, SP</Legal>
-          <Legal>Telefone: +55 11 98765-4321</Legal>
-          <Legal>CNPJ: 12.345.678/0001-99</Legal>
+          <Legal>Rua Alfredo Engler, 405, Centro - Jaguariúna, SP</Legal>
+          <Legal>Telefone: +55 19 99209-5965</Legal>
+          <Legal>Email: siluesbiquini@gmail.com</Legal>
         </Col>
 
         <Col>
 
           <Nav>
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#about">About</NavLink>
-            <NavLink href="#products">Products</NavLink>
-            <NavLink href="#contact">Contact</NavLink>
+            <NavLink href="#home">Início</NavLink>
+            <NavLink href="#about">Sobre</NavLink>
+            <NavLink href="#products">Produtos</NavLink>
+            <NavLink href="#testimonials">Depoimentos</NavLink>
+            <NavLink href="#contact">Contato</NavLink>
           </Nav>
         </Col>
       </Inner>

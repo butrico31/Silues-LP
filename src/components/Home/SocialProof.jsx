@@ -16,7 +16,7 @@ const samples = [
 
 export default function SocialProof() {
   return (
-    <Section>
+    <Section id="testimonials">
       <Inner>
         <Title>Mulheres que Escolheram Silues Biquinis</Title>
         <Description>Depoimentos reais de clientes que amaram a experiência e a qualidade das peças.</Description>
