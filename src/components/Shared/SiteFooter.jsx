@@ -22,10 +22,9 @@ export default function SiteFooter() {
         <Col>
 
           <Nav>
-            <NavLink href="#home">Início</NavLink>
-            <NavLink href="#about">Sobre</NavLink>
             <NavLink href="#products">Produtos</NavLink>
             <NavLink href="#testimonials">Depoimentos</NavLink>
+            <NavLink href="#purpose">Propósito</NavLink>
             <NavLink href="#contact">Contato</NavLink>
           </Nav>
         </Col>

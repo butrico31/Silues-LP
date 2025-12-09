@@ -7,19 +7,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 html,
 body {
   scroll-behavior: smooth;
   font-family: 'Montserrat', sans-serif;
+  background-color: beige;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
 }
 
-/* Required base styles for GSAP ScrollSmoother */
 html,
 body,
 #root {
   height: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 

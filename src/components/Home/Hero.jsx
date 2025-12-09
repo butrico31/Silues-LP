@@ -34,17 +34,17 @@ export default function Hero() {
         <Container>
             <EntryCover ref={coverRef}>
                 {/* Onda 1 - Mais profunda */}
-                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '80px', opacity: 0.4, animationDelay: '0s' }}>
+                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '80px', opacity: 0.4, animationDelay: '0s', position:'absolute' }}>
                     <path d="M0,40 C200,80 400,20 600,60 C800,100 1000,40 1200,70 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.15)" />
                 </WaveSVG>
                 
                 {/* Onda 2 - Média */}
-                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '40px', opacity: 0.5, animationDelay: '-1s' }}>
+                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '40px', opacity: 0.5, animationDelay: '-1s', position:'absolute' }}>
                     <path d="M0,20 C150,70 350,10 600,50 C850,90 1050,30 1200,60 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.2)" />
                 </WaveSVG>
                 
                 {/* Onda 3 - Superfície */}
-                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '-2px', opacity: 0.7, animationDelay: '-2s' }}>
+                <WaveSVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ bottom: '-2px', opacity: 0.7, animationDelay: '-2s', position:'absolute' }}>
                     <path d="M0,0 C150,80 350,0 600,50 C850,100 1050,20 1200,80 L1200,120 L0,120 Z" fill="url(#waveGradient)" />
                     <defs>
                         <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -95,7 +95,7 @@ const voidDivWidth = '25%';
 
 // Dimensões das linhas
 const lineThickness = '1vh';
-const lineHorizontalHeight = '0.9vh';
+const lineHorizontalHeight = '1vh';
 
 // Linha vertical superior
 const lineTopVerticalHeight = '88vh';

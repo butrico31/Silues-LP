@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from 'react-dom';
 import { NavLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import styled, { keyframes } from "styled-components";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -35,11 +36,10 @@ export default function Header() {
                 <Brand to="/"><img style={{width:'86px'}} src="/Logo-Silues.webp" alt="" /></Brand>
 
                 <Links_containers>
-                    <AnchorLink href="#home" onClick={(e) => scrollToId(e, 'home')}>Início</AnchorLink>
-                    <AnchorLink href="#about" onClick={(e) => scrollToId(e, 'about')}>Sobre</AnchorLink>
-                    <AnchorLink href="#products" onClick={(e) => scrollToId(e, 'products')}>Produtos</AnchorLink>
-                    <AnchorLink href="#testimonials" onClick={(e) => scrollToId(e, 'testimonials')}>Depoimentos</AnchorLink>
-                    <AnchorLink href="#contact" onClick={(e) => scrollToId(e, 'contact')}>Contato</AnchorLink>
+                    <AnchorLink to="products" smooth={true} duration={500} spy={true} offset={-80}>Produtos</AnchorLink>
+                    <AnchorLink to="testimonials" smooth={true} duration={500} spy={true} offset={-80}>Depoimentos</AnchorLink>
+                    <AnchorLink to="purpose" smooth={true} duration={500} spy={true} offset={-80}>Propósito</AnchorLink>
+                    <AnchorLink to="contact" smooth={true} duration={500} spy={true} offset={-80}>Contato</AnchorLink>
                 </Links_containers>
 
                 <Burger aria-label="Abrir menu" aria-expanded={open} onClick={() => setOpen(!open)} open={open}>
@@ -49,11 +49,10 @@ export default function Header() {
                 </Burger>
 
                 <MobileMenu open={open} onClick={() => setOpen(false)}>
-                    <MobileAnchor href="#home" onClick={(e) => scrollToId(e, 'home')}>Início</MobileAnchor>
-                    <MobileAnchor href="#about" onClick={(e) => scrollToId(e, 'about')}>Sobre</MobileAnchor>
-                    <MobileAnchor href="#products" onClick={(e) => scrollToId(e, 'products')}>Produtos</MobileAnchor>
-                    <MobileAnchor href="#testimonials" onClick={(e) => scrollToId(e, 'testimonials')}>Depoimentos</MobileAnchor>
-                    <MobileAnchor href="#contact" onClick={(e) => scrollToId(e, 'contact')}>Contato</MobileAnchor>
+                    <MobileAnchor to="products" smooth={true} duration={500} spy={true} offset={-80}>Produtos</MobileAnchor>
+                    <MobileAnchor to="testimonials" smooth={true} duration={500} spy={true} offset={-80}>Depoimentos</MobileAnchor>
+                    <MobileAnchor to="purpose" smooth={true} duration={500} spy={true} offset={-80}>Propósito</MobileAnchor>
+                    <MobileAnchor to="contact" smooth={true} duration={500} spy={true} offset={-80}>Contato</MobileAnchor>
                 </MobileMenu>
             </HeaderInner>
         </Nav>
@@ -66,16 +65,6 @@ export default function Header() {
 
     return headerNode
 }
-
-/* smooth scroll helper */
-function scrollToId(e, id){
-    e.preventDefault();
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-
 
 const Links_containers = styled.div`
     display: flex;
@@ -141,7 +130,7 @@ const Link = styled(NavLink)`
     &:hover{ background: rgba(255,255,255,0.06); color: #ffcc00; }
 `;
 
-const AnchorLink = styled.a`
+const AnchorLink = styled(ScrollLink)`
     color: #fff;
     text-decoration: none;
     padding: 8px 12px;
@@ -149,11 +138,17 @@ const AnchorLink = styled.a`
     font-weight: 500;
     transition: all 200ms ease;
     font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
     
     &:hover{ 
         background: rgba(255,204,0,0.15);
         color: #ffcc00; 
         transform: translateY(-1px);
+    }
+    
+    &.active {
+        color: #ffcc00;
+        background: rgba(255,204,0,0.1);
     }
 `;
 
@@ -214,13 +209,19 @@ const MobileLink = styled(NavLink)`
     &:hover{ background: rgba(255,255,255,0.04); color: #ffcc00; }
 `;
 
-const MobileAnchor = styled.a`
+const MobileAnchor = styled(ScrollLink)`
     color: #fff;
     padding: 12px 8px;
     text-decoration: none;
     border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    cursor: pointer;
     
     &:hover{ background: rgba(255,255,255,0.04); color: #ffcc00; }
+    
+    &.active {
+        color: #ffcc00;
+        background: rgba(255,255,255,0.06);
+    }
 `;

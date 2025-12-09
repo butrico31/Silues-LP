@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export default function Purpose() {
   return (
-    <Section id="about">
+    <Section id="purpose">
       <Inner>
         <Left>
           <Photo src="/2025-05-21.webp" alt="Fundadora" />
